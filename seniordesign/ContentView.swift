@@ -37,6 +37,19 @@ struct secondview: View {
         Button("SCAN") {
             self.isScan.toggle()
         }
+        
+        if isScan {
+            thirdview()
+        }
+    }
+    
+    
+}
+
+struct thirdview: View {
+    
+    var body: some View {
+        Text("yay")
     }
 }
 
