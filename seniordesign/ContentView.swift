@@ -38,9 +38,9 @@ struct secondview: View {
             self.isScan.toggle()
         }
         
-        if isScan {
-            thirdview()
-        }
+//        if isScan {
+//            thirdview()
+//        }
     }
     
     
