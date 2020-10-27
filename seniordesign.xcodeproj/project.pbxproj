@@ -13,6 +13,7 @@
 		243A125B25479165004B51A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243A125A25479165004B51A0 /* Preview Assets.xcassets */; };
 		243A126625479166004B51A0 /* seniordesignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243A126525479166004B51A0 /* seniordesignTests.swift */; };
 		243A127125479166004B51A0 /* seniordesignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243A127025479166004B51A0 /* seniordesignUITests.swift */; };
+		243A12822547A2EA004B51A0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243A12812547A2EA004B51A0 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		243A126C25479166004B51A0 /* seniordesignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seniordesignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		243A127025479166004B51A0 /* seniordesignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seniordesignUITests.swift; sourceTree = "<group>"; };
 		243A127225479166004B51A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		243A12812547A2EA004B51A0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				243A125325479163004B51A0 /* seniordesignApp.swift */,
 				243A125525479163004B51A0 /* ContentView.swift */,
+				243A12812547A2EA004B51A0 /* Storyboard.storyboard */,
 				243A125725479165004B51A0 /* Assets.xcassets */,
 				243A125C25479165004B51A0 /* Info.plist */,
 				243A125925479165004B51A0 /* Preview Content */,
@@ -235,6 +238,7 @@
 			files = (
 				243A125B25479165004B51A0 /* Preview Assets.xcassets in Resources */,
 				243A125825479165004B51A0 /* Assets.xcassets in Resources */,
+				243A12822547A2EA004B51A0 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
