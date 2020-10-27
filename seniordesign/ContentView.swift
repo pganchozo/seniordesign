@@ -16,7 +16,6 @@ struct ContentView: View {
                 .padding()
           
         .onAppear(perform: delayText)
-        .background(Color.blue)
         .sheet(isPresented: $showingSheet) {
             secondview()
         }
