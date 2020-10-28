@@ -13,7 +13,12 @@
 		243A125B25479165004B51A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243A125A25479165004B51A0 /* Preview Assets.xcassets */; };
 		243A126625479166004B51A0 /* seniordesignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243A126525479166004B51A0 /* seniordesignTests.swift */; };
 		243A127125479166004B51A0 /* seniordesignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243A127025479166004B51A0 /* seniordesignUITests.swift */; };
-		243A12822547A2EA004B51A0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243A12812547A2EA004B51A0 /* Storyboard.storyboard */; };
+		24491A9C2549E06D001EE468 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24491A9B2549E06D001EE468 /* CameraController.swift */; };
+		24491AA12549E210001EE468 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24491AA02549E210001EE468 /* CameraViewController.swift */; };
+		24491AA92549E501001EE468 /* gpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24491AA82549E501001EE468 /* gpsView.swift */; };
+		24491AAE2549E5D3001EE468 /* secondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24491AAD2549E5D3001EE468 /* secondView.swift */; };
+		24491B2D254A0578001EE468 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24491B2C254A0578001EE468 /* Storyboard.storyboard */; };
+		24491B32254A14A4001EE468 /* scanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24491B31254A14A4001EE468 /* scanView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +51,12 @@
 		243A126C25479166004B51A0 /* seniordesignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seniordesignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		243A127025479166004B51A0 /* seniordesignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seniordesignUITests.swift; sourceTree = "<group>"; };
 		243A127225479166004B51A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		243A12812547A2EA004B51A0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		24491A9B2549E06D001EE468 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		24491AA02549E210001EE468 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		24491AA82549E501001EE468 /* gpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsView.swift; sourceTree = "<group>"; };
+		24491AAD2549E5D3001EE468 /* secondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondView.swift; sourceTree = "<group>"; };
+		24491B2C254A0578001EE468 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		24491B31254A14A4001EE468 /* scanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +107,11 @@
 		243A125225479163004B51A0 /* seniordesign */ = {
 			isa = PBXGroup;
 			children = (
+				243A125725479165004B51A0 /* Assets.xcassets */,
 				243A125325479163004B51A0 /* seniordesignApp.swift */,
 				243A125525479163004B51A0 /* ContentView.swift */,
-				243A12812547A2EA004B51A0 /* Storyboard.storyboard */,
-				243A125725479165004B51A0 /* Assets.xcassets */,
+				24491AC72549EF14001EE468 /* Views */,
+				24491A9B2549E06D001EE468 /* CameraController.swift */,
 				243A125C25479165004B51A0 /* Info.plist */,
 				243A125925479165004B51A0 /* Preview Content */,
 			);
@@ -131,6 +142,18 @@
 				243A127225479166004B51A0 /* Info.plist */,
 			);
 			path = seniordesignUITests;
+			sourceTree = "<group>";
+		};
+		24491AC72549EF14001EE468 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24491AA02549E210001EE468 /* CameraViewController.swift */,
+				24491B31254A14A4001EE468 /* scanView.swift */,
+				24491B2C254A0578001EE468 /* Storyboard.storyboard */,
+				24491AA82549E501001EE468 /* gpsView.swift */,
+				24491AAD2549E5D3001EE468 /* secondView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +261,7 @@
 			files = (
 				243A125B25479165004B51A0 /* Preview Assets.xcassets in Resources */,
 				243A125825479165004B51A0 /* Assets.xcassets in Resources */,
-				243A12822547A2EA004B51A0 /* Storyboard.storyboard in Resources */,
+				24491B2D254A0578001EE468 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +286,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24491A9C2549E06D001EE468 /* CameraController.swift in Sources */,
+				24491AA92549E501001EE468 /* gpsView.swift in Sources */,
+				24491B32254A14A4001EE468 /* scanView.swift in Sources */,
+				24491AA12549E210001EE468 /* CameraViewController.swift in Sources */,
 				243A125625479163004B51A0 /* ContentView.swift in Sources */,
+				24491AAE2549E5D3001EE468 /* secondView.swift in Sources */,
 				243A125425479163004B51A0 /* seniordesignApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"seniordesign/Preview Content\"";
+				DEVELOPMENT_TEAM = QVH5R3W5B7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = seniordesign/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -433,7 +462,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Example.seniordesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,6 +473,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"seniordesign/Preview Content\"";
+				DEVELOPMENT_TEAM = QVH5R3W5B7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = seniordesign/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -454,7 +484,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Example.seniordesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -464,6 +494,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QVH5R3W5B7;
 				INFOPLIST_FILE = seniordesignTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -485,6 +516,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QVH5R3W5B7;
 				INFOPLIST_FILE = seniordesignTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -505,6 +537,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QVH5R3W5B7;
 				INFOPLIST_FILE = seniordesignUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,6 +557,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QVH5R3W5B7;
 				INFOPLIST_FILE = seniordesignUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
