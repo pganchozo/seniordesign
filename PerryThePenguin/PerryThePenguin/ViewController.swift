@@ -15,17 +15,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func launchGPS(_ sender: Any) {
-        guard let gpsvc = storyboard?.instantiateViewController(identifier: "gps_vc") as? GpsViewController else{
+        guard (storyboard?.instantiateViewController(identifier: "gps_vc") as? GpsViewController) != nil else{
             return
         }
-        present(gpsvc, animated: true)
+//        present(gpsvc, animated: true)
     }
     
     @IBAction func launchScan(_ sender: Any) {
-        guard let scanvs = storyboard?.instantiateViewController(identifier: "textspeech_vc") as? TextSpeechViewController else{
+        guard (storyboard?.instantiateViewController(identifier: "textspeech_vc") as? TextSpeechViewController) != nil else{
             return
         }
-        present(scanvs, animated: true)
+//        present(scanvs, animated: true)
     }
     
 }
