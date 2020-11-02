@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00433916254F65BD0061C0CB /* GPSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00433915254F65BD0061C0CB /* GPSViewController.swift */; };
 		243A125425479163004B51A0 /* seniordesignApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243A125325479163004B51A0 /* seniordesignApp.swift */; };
 		243A125625479163004B51A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243A125525479163004B51A0 /* ContentView.swift */; };
 		243A125825479165004B51A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243A125725479165004B51A0 /* Assets.xcassets */; };
@@ -17,7 +18,7 @@
 		24491AA12549E210001EE468 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24491AA02549E210001EE468 /* CameraViewController.swift */; };
 		24491AA92549E501001EE468 /* gpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24491AA82549E501001EE468 /* gpsView.swift */; };
 		24491AAE2549E5D3001EE468 /* secondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24491AAD2549E5D3001EE468 /* secondView.swift */; };
-		24491B2D254A0578001EE468 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24491B2C254A0578001EE468 /* Storyboard.storyboard */; };
+		24491B2D254A0578001EE468 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24491B2C254A0578001EE468 /* Main.storyboard */; };
 		24491B32254A14A4001EE468 /* scanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24491B31254A14A4001EE468 /* scanView.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00433915254F65BD0061C0CB /* GPSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSViewController.swift; sourceTree = "<group>"; };
 		243A125025479163004B51A0 /* seniordesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seniordesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		243A125325479163004B51A0 /* seniordesignApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seniordesignApp.swift; sourceTree = "<group>"; };
 		243A125525479163004B51A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		24491AA02549E210001EE468 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		24491AA82549E501001EE468 /* gpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsView.swift; sourceTree = "<group>"; };
 		24491AAD2549E5D3001EE468 /* secondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondView.swift; sourceTree = "<group>"; };
-		24491B2C254A0578001EE468 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		24491B2C254A0578001EE468 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		24491B31254A14A4001EE468 /* scanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,9 +151,10 @@
 			children = (
 				24491AA02549E210001EE468 /* CameraViewController.swift */,
 				24491B31254A14A4001EE468 /* scanView.swift */,
-				24491B2C254A0578001EE468 /* Storyboard.storyboard */,
+				24491B2C254A0578001EE468 /* Main.storyboard */,
 				24491AA82549E501001EE468 /* gpsView.swift */,
 				24491AAD2549E5D3001EE468 /* secondView.swift */,
+				00433915254F65BD0061C0CB /* GPSViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,7 +264,7 @@
 			files = (
 				243A125B25479165004B51A0 /* Preview Assets.xcassets in Resources */,
 				243A125825479165004B51A0 /* Assets.xcassets in Resources */,
-				24491B2D254A0578001EE468 /* Storyboard.storyboard in Resources */,
+				24491B2D254A0578001EE468 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +292,7 @@
 				24491A9C2549E06D001EE468 /* CameraController.swift in Sources */,
 				24491AA92549E501001EE468 /* gpsView.swift in Sources */,
 				24491B32254A14A4001EE468 /* scanView.swift in Sources */,
+				00433916254F65BD0061C0CB /* GPSViewController.swift in Sources */,
 				24491AA12549E210001EE468 /* CameraViewController.swift in Sources */,
 				243A125625479163004B51A0 /* ContentView.swift in Sources */,
 				24491AAE2549E5D3001EE468 /* secondView.swift in Sources */,

@@ -29,6 +29,21 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="oFA-DX-jBh">
+            <objects>
+                <viewController storyboardIdentifier="gps_vc" id="cS4-Kt-Y9d" customClass="GPSViewController" customModule="seniordesign" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="44N-Gp-Kpr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QXJ-Ci-KGQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9q0-tM-WeH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="119"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CameraIcon" width="24" height="24"/>

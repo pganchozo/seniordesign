@@ -22,8 +22,8 @@ struct secondView: View {
                     }
                 }
                 VStack{
-                    NavigationLink(destination: gpsView()) {
-                        Text("GPS")
+                    NavigationLink(destination: GPSViewController()) {
+                        Text("G")
                     }
                 }
             }
