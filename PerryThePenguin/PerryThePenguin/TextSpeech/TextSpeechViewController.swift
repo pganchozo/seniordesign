@@ -131,16 +131,17 @@ class TextSpeechViewController: UIViewController {
 
     
     @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet var previewView: UIView!
+    
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var capturePhotoOutput: AVCapturePhotoOutput?
-    var qrCodeFrameView: UIView?
+    var previewing = false
 
-    @IBOutlet var previewView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         captureSession = AVCaptureSession()
         captureButton?.layer.cornerRadius = captureButton.frame.size.width / 2
@@ -148,7 +149,7 @@ class TextSpeechViewController: UIViewController {
         
         capturePhotoOutput = AVCapturePhotoOutput()
 
-        // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video as the media type parameter
+        // Instance of the AVCaptureDevice class to initialize a device object
         let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)
         
         if let input = try? AVCaptureDeviceInput(device: captureDevice!) {
@@ -167,18 +168,6 @@ class TextSpeechViewController: UIViewController {
             }
         } else {
             print("some problem here")
-        }
-        
-        
-        
-        //Initialize QR Code Frame to highlight the QR code
-        qrCodeFrameView = UIView()
-        
-        if let qrCodeFrameView = qrCodeFrameView {
-            qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-            qrCodeFrameView.layer.borderWidth = 2
-            view.addSubview(qrCodeFrameView)
-            view.bringSubviewToFront(qrCodeFrameView)
         }
     
     }
@@ -199,10 +188,8 @@ class TextSpeechViewController: UIViewController {
         // Make sure capturePhotoOutput is valid
         guard let capturePhotoOutput = self.capturePhotoOutput else { return }
         
-        // Get an instance of AVCapturePhotoSettings class
         let photoSettings = AVCapturePhotoSettings()
         
-        // Set photo settings for our need
         photoSettings.isAutoStillImageStabilizationEnabled = true
         photoSettings.isHighResolutionPhotoEnabled = true
         photoSettings.flashMode = .auto
@@ -272,31 +259,6 @@ extension TextSpeechViewController : AVCapturePhotoCaptureDelegate {
     }
 }
 
-extension TextSpeechViewController : AVCaptureMetadataOutputObjectsDelegate {
-
-    func metadataOutput(_ captureOutput: AVCaptureMetadataOutput,
-                       didOutput metadataObjects: [AVMetadataObject],
-                       from connection: AVCaptureConnection) {
-        // Check if the metadataObjects array is contains at least one object.
-        if metadataObjects.count == 0 {
-            qrCodeFrameView?.frame = CGRect.zero
-            return
-        }
-        
-        // Get the metadata object.
-        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-        
-        if metadataObj.type == AVMetadataObject.ObjectType.qr {
-            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
-            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            qrCodeFrameView?.frame = barCodeObject!.bounds
-            
-            if metadataObj.stringValue != nil {
-                
-            }
-        }
-    }
-}
 
 extension UIInterfaceOrientation {
     var videoOrientation: AVCaptureVideoOrientation? {
