@@ -1,152 +1,43 @@
-////
-////  TextSpeechViewController.swift
-////  PerryThePenguin
-////
-////  Created by terry zhen on 11/1/20.
-////
 //
-//import UIKit
-//import AVFoundation
+//  TextSpeechViewController.swift
+//  PerryThePenguin
 //
-//final class TextSpeechViewController: UIViewController {
-//
-//    @IBOutlet weak var Capture: UIButton!
-//    @IBOutlet weak var previewView: UIView!
-//
-//    var captureSesssion : AVCaptureSession!
-//    var cameraOutput : AVCapturePhotoOutput!
-//    var previewLayer : AVCaptureVideoPreviewLayer!
-//    var currentImage: (image: Data, imageName: String)?
-//
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        captureSesssion = AVCaptureSession()
-//        captureSesssion.sessionPreset = AVCaptureSession.Preset.photo
-//        cameraOutput = AVCapturePhotoOutput()
-//
-//        previewView = UIView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
-//
-//
-//        let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)
-//
-//        if let input = try? AVCaptureDeviceInput(device: device!) {
-//            if (captureSesssion.canAddInput(input)) {
-//                captureSesssion.addInput(input)
-//                if (captureSesssion.canAddOutput(cameraOutput)) {
-//                    captureSesssion.addOutput(cameraOutput)
-//                    previewLayer = AVCaptureVideoPreviewLayer(session: captureSesssion)
-//                    previewLayer.frame = previewView.bounds
-//                    previewView.layer.addSublayer(previewLayer)
-//                    captureSesssion.startRunning()
-//                }
-//            } else {
-//                print("issue here : captureSesssion.canAddInput")
-//            }
-//        } else {
-//            print("some problem here")
-//        }
-//
-//        view.addSubview(previewView)
-//    }
-//}
-//
-//extension TextSpeechViewController : AVCapturePhotoCaptureDelegate {
-//    func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error myerror: Error?) {
-//
-//        if let myerror = myerror {
-//            print("error occure : \(myerror.localizedDescription)")
-//        }
-//
-//        if  let sampleBuffer = photoSampleBuffer,
-//            let previewBuffer = previewPhotoSampleBuffer,
-//            let dataImage =  AVCapturePhotoOutput
-//                .jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer) {
-//
-//            self.currentImage = (dataImage, "\(resolvedSettings.uniqueID).jpg")
-//            showImage()
-//        }
-//
-//    }
-//
-//    func showImage(){
-//        let dataProvider = CGDataProvider(data: self.currentImage!.image as CFData)
-//        let cgImageRef: CGImage! = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
-//        let image = UIImage(cgImage: cgImageRef, scale: 1.0, orientation: UIImage.Orientation.right)
-//
-//        self.Capture.imageView?.contentMode = .scaleAspectFill
-//        self.Capture.setImage(image, for: .normal)
-//        self.Capture.isHidden = false
-//    }
-//}
-//
-//
-//extension TextSpeechViewController {
-//    @IBAction func didPressTakePhoto(_ sender: UIButton) {
-//            var settings = AVCapturePhotoSettings()
-//
-//
-//            let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
-//            let previewFormat = [
-//                kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,
-//                kCVPixelBufferWidthKey as String: self.Capture.frame.width,
-//                kCVPixelBufferHeightKey as String: self.Capture.frame.height
-//            ] as [String : Any]
-//            settings.previewPhotoFormat = previewFormat
-//
-//            cameraOutput.capturePhoto(with: settings, delegate: self)
-//        }
-//}
-//
-//
-//
-//
-//
-//    /*
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//    }
-//    */
-//
-//
-
-
-//
-//  ViewController.swift
-//  Camera
-//
-//  Created by Rizwan on 16/06/17.
-//  Copyright © 2017 Rizwan. All rights reserved.
+//  Created by Patricia Ganchozo on 10/26/20.
 //
 
 import UIKit
 import AVFoundation
+import Firebase
 
-class TextSpeechViewController: UIViewController {
+class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
     
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet var previewView: UIView!
     
+//    let result = ScanViewController(nibName: "ScanViewController", bundle: nil)
+    
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var capturePhotoOutput: AVCapturePhotoOutput?
     var previewing = false
-
     
+    var textRecognizer: VisionTextRecognizer!
+    var scannedText: String?
+    var capturedImage: UIImage?
+    var imagetopass: UIImage?
+    
+    var metaData: NSData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let vision = Vision.vision()
+        textRecognizer = vision.cloudTextRecognizer()
+        
         captureSession = AVCaptureSession()
         captureButton?.layer.cornerRadius = captureButton.frame.size.width / 2
         captureButton?.clipsToBounds = true
-        
         capturePhotoOutput = AVCapturePhotoOutput()
 
         // Instance of the AVCaptureDevice class to initialize a device object
@@ -181,7 +72,6 @@ class TextSpeechViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func onTapTakePhoto(_ sender: Any) {
@@ -189,8 +79,6 @@ class TextSpeechViewController: UIViewController {
         guard let capturePhotoOutput = self.capturePhotoOutput else { return }
         
         let photoSettings = AVCapturePhotoSettings()
-        
-        photoSettings.isAutoStillImageStabilizationEnabled = true
         photoSettings.isHighResolutionPhotoEnabled = true
         photoSettings.flashMode = .auto
         
@@ -198,64 +86,33 @@ class TextSpeechViewController: UIViewController {
         capturePhotoOutput.capturePhoto(with: photoSettings, delegate: self)
     }
     
-        
-}
-
-extension TextSpeechViewController : AVCapturePhotoCaptureDelegate {
-    func photoOutput(_ captureOutput: AVCapturePhotoOutput,
-                 didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
-                 previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
-                 resolvedSettings: AVCaptureResolvedPhotoSettings,
-                 bracketSettings: AVCaptureBracketedStillImageSettings?,
-                 error: Error?) {
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         // Make sure we get some photo sample buffer
-        guard error == nil,
-            let photoSampleBuffer = photoSampleBuffer else {
+        guard error == nil else{
             print("Error capturing photo: \(String(describing: error))")
             return
         }
         
-        // Convert photo same buffer to a jpeg image data by using AVCapturePhotoOutput
-        guard let imageData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer, previewPhotoSampleBuffer: previewPhotoSampleBuffer) else {
-            return
-        }
+        guard let imageData = photo.fileDataRepresentation() else {
+                print("Fail to convert pixel buffer")
+                return
+            }
         
         // Initialise an UIImage with our image data
-        let capturedImage = UIImage.init(data: imageData , scale: 1.0)
-        if let image = capturedImage {
-            // Save our captured image to photos album
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        }
+        self.capturedImage = UIImage.init(data: imageData , scale: 1.0)
+        
+        UIImageWriteToSavedPhotosAlbum(capturedImage!, nil, nil, nil)
+        
+        
     }
-
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        guard error == nil else {
-            print("Fail to capture photo: \(String(describing: error))")
-            return
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ScanViewController {
+            let result = segue.destination as! ScanViewController
+//            result.finalImage = capturedImage!
+            result.scantext = "hello"
         }
-
-        guard let imageData = photo.fileDataRepresentation() else {
-            print("Fail to convert pixel buffer")
-            return
-        }
-
-        guard let capturedImage = UIImage.init(data: imageData , scale: 1.0) else {
-            print("Fail to convert image data to UIImage")
-            return
-        }
-
-        let width = capturedImage.size.width
-        let height = capturedImage.size.height
-        let origin = CGPoint(x: (width - height)/2, y: (height - height)/2)
-        let size = CGSize(width: height, height: height)
-
-        guard let imageRef = capturedImage.cgImage?.cropping(to: CGRect(origin: origin, size: size)) else {
-            print("Fail to crop image")
-            return
-        }
-
-        let imageToSave = UIImage(cgImage: imageRef, scale: 1.0, orientation: .down)
-        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
     }
 }
 

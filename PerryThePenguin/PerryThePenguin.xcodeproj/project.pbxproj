@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,9 @@
 		0043397E254F7CB90061C0CB /* TextSpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043397D254F7CB90061C0CB /* TextSpeechViewController.swift */; };
 		00433985254F7EBC0061C0CB /* GpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00433984254F7EBC0061C0CB /* GpsViewController.swift */; };
 		1C91117493C232260DF71BDC /* Pods_PerryThePenguin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4EFB74267308F346C860DE /* Pods_PerryThePenguin.framework */; };
-		24A5E418255A029C00D8D171 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24A5E417255A029C00D8D171 /* GoogleService-Info.plist */; };
+		24A5E439255B2E1100D8D171 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5E438255B2E1100D8D171 /* ScanViewController.swift */; };
+		24A5E450255B813800D8D171 /* ImageToText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5E44F255B813800D8D171 /* ImageToText.swift */; };
+		24A5E465255DB12F00D8D171 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24A5E464255DB12F00D8D171 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +32,9 @@
 		00433961254F72980061C0CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0043397D254F7CB90061C0CB /* TextSpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSpeechViewController.swift; sourceTree = "<group>"; };
 		00433984254F7EBC0061C0CB /* GpsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpsViewController.swift; sourceTree = "<group>"; };
-		24A5E417255A029C00D8D171 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		24A5E438255B2E1100D8D171 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		24A5E44F255B813800D8D171 /* ImageToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToText.swift; sourceTree = "<group>"; };
+		24A5E464255DB12F00D8D171 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D15B4320673C8BFCDB2D0AC /* Pods-PerryThePenguin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerryThePenguin.release.xcconfig"; path = "Target Support Files/Pods-PerryThePenguin/Pods-PerryThePenguin.release.xcconfig"; sourceTree = "<group>"; };
 		9C4EFB74267308F346C860DE /* Pods_PerryThePenguin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerryThePenguin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB849A8A9B3926A7B538C002 /* Pods-PerryThePenguin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerryThePenguin.debug.xcconfig"; path = "Target Support Files/Pods-PerryThePenguin/Pods-PerryThePenguin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,7 +80,7 @@
 				0043395C254F72980061C0CB /* Assets.xcassets */,
 				0043395E254F72980061C0CB /* LaunchScreen.storyboard */,
 				00433961254F72980061C0CB /* Info.plist */,
-				24A5E417255A029C00D8D171 /* GoogleService-Info.plist */,
+				24A5E464255DB12F00D8D171 /* GoogleService-Info.plist */,
 				00433981254F7E690061C0CB /* GPS */,
 				0043397C254F7CA60061C0CB /* TextSpeech */,
 			);
@@ -86,6 +90,8 @@
 		0043397C254F7CA60061C0CB /* TextSpeech */ = {
 			isa = PBXGroup;
 			children = (
+				24A5E438255B2E1100D8D171 /* ScanViewController.swift */,
+				24A5E44F255B813800D8D171 /* ImageToText.swift */,
 				0043397D254F7CB90061C0CB /* TextSpeechViewController.swift */,
 			);
 			path = TextSpeech;
@@ -113,7 +119,6 @@
 				FB849A8A9B3926A7B538C002 /* Pods-PerryThePenguin.debug.xcconfig */,
 				2D15B4320673C8BFCDB2D0AC /* Pods-PerryThePenguin.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -177,7 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00433960254F72980061C0CB /* LaunchScreen.storyboard in Resources */,
-				24A5E418255A029C00D8D171 /* GoogleService-Info.plist in Resources */,
+				24A5E465255DB12F00D8D171 /* GoogleService-Info.plist in Resources */,
 				0043395D254F72980061C0CB /* Assets.xcassets in Resources */,
 				0043395B254F72970061C0CB /* Main.storyboard in Resources */,
 			);
@@ -233,7 +238,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				00433958254F72970061C0CB /* ViewController.swift in Sources */,
+				24A5E439255B2E1100D8D171 /* ScanViewController.swift in Sources */,
 				00433985254F7EBC0061C0CB /* GpsViewController.swift in Sources */,
+				24A5E450255B813800D8D171 /* ImageToText.swift in Sources */,
 				00433954254F72970061C0CB /* AppDelegate.swift in Sources */,
 				00433956254F72970061C0CB /* SceneDelegate.swift in Sources */,
 				0043397E254F7CB90061C0CB /* TextSpeechViewController.swift in Sources */,
