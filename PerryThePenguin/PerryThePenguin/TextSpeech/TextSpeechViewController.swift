@@ -7,7 +7,6 @@
 
 import UIKit
 import AVFoundation
-import Firebase
 
 class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
