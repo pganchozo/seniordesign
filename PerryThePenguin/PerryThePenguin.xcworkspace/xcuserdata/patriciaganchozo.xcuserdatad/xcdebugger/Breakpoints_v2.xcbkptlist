@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "880F9B8C-C491-4204-968D-F90F6132CFD6"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "378CD3FB-6A61-4F8E-B20C-877EAF889FDB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerryThePenguin/TextSpeech/ScannedViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "ScannedImage"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "420D4116-3FF5-42FD-9197-CC5BDBAAA7C6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerryThePenguin/TextSpeech/ImageToText.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "420D4116-3FF5-42FD-9197-CC5BDBAAA7C6 - 824eee78ae2d93d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PerryThePenguin.ImageToText.process(imageView: __C.UIImage, callback: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "PerryThePenguin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patriciaganchozo/Documents/seniordesign/PerryThePenguin/PerryThePenguin/TextSpeech/ImageToText.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "420D4116-3FF5-42FD-9197-CC5BDBAAA7C6 - c3b7a8d9613f2e21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRVisionText&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PerryThePenguin.ImageToText.process(imageView: __C.UIImage, callback: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "PerryThePenguin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patriciaganchozo/Documents/seniordesign/PerryThePenguin/PerryThePenguin/TextSpeech/ImageToText.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5667268D-26EC-441D-B961-E8379726431E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PerryThePenguin/TextSpeech/ImageToText.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
