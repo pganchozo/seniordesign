@@ -45,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C91117493C232260DF71BDC /* Pods_PerryThePenguin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,8 +56,7 @@
 			children = (
 				00433952254F72970061C0CB /* PerryThePenguin */,
 				00433951254F72970061C0CB /* Products */,
-				FE2668887B452F506274B2BE /* Pods */,
-				F15111164B76CDECD050E1F7 /* Frameworks */,
+
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +120,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,11 +128,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00433964254F72980061C0CB /* Build configuration list for PBXNativeTarget "PerryThePenguin" */;
 			buildPhases = (
-				AFF557A099EDBFF7AB33BC22 /* [CP] Check Pods Manifest.lock */,
 				0043394C254F72970061C0CB /* Sources */,
 				0043394D254F72970061C0CB /* Frameworks */,
 				0043394E254F72970061C0CB /* Resources */,
-				6C4B6B098F07BA02ADEEA32B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,47 +187,7 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		6C4B6B098F07BA02ADEEA32B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PerryThePenguin/Pods-PerryThePenguin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PerryThePenguin/Pods-PerryThePenguin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PerryThePenguin/Pods-PerryThePenguin-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AFF557A099EDBFF7AB33BC22 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PerryThePenguin-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
+
 
 /* Begin PBXSourcesBuildPhase section */
 		0043394C254F72970061C0CB /* Sources */ = {
@@ -387,7 +344,6 @@
 		};
 		00433965254F72980061C0CB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB849A8A9B3926A7B538C002 /* Pods-PerryThePenguin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -407,7 +363,6 @@
 		};
 		00433966254F72980061C0CB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D15B4320673C8BFCDB2D0AC /* Pods-PerryThePenguin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
