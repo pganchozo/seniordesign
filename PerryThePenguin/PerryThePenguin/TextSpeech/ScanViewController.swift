@@ -15,8 +15,7 @@ class ScanViewController: UIViewController {
     @IBOutlet weak var imageResult: UIImageView!
     
     var scanimage: UIImage!
-    var scannedresult: VisionDocumentText!
-    var textRecognizer: VisionDocumentTextRecognizer!
+    var textRecognizer: VisionTextRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,7 @@ class ScanViewController: UIViewController {
         imageResult.image = UIImage(named: "sampletext")
         
         let vision = Vision.vision()
-        textRecognizer = vision.cloudDocumentTextRecognizer()
+        textRecognizer = vision.cloudTextRecognizer()
         
         let visionImage = VisionImage(image: imageResult.image!)
         textRecognizer.process(visionImage) { (result, error) in guard error == nil, let result = result else { return }

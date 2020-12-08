@@ -16,23 +16,17 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
     
 //    let result = ScanViewController(nibName: "ScanViewController", bundle: nil)
     
-    var captureSession: AVCaptureSession?
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    var capturePhotoOutput: AVCapturePhotoOutput?
-    var previewing = false
-    
-    var textRecognizer: VisionTextRecognizer!
     var scannedText: String?
-    var capturedImage: UIImage?
     var imagetopass: UIImage?
+    var capturedImage: UIImage?
+    var captureSession: AVCaptureSession?
+    var capturePhotoOutput: AVCapturePhotoOutput?
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     
-    var metaData: NSData?
-    
+    var previewing = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let vision = Vision.vision()
-        textRecognizer = vision.cloudTextRecognizer()
         
         captureSession = AVCaptureSession()
         captureButton?.layer.cornerRadius = captureButton.frame.size.width / 2
@@ -74,14 +68,14 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
     }
 
     @IBAction func onTapTakePhoto(_ sender: Any) {
+        
         // Make sure capturePhotoOutput is valid
         guard let capturePhotoOutput = self.capturePhotoOutput else { return }
-        
         let photoSettings = AVCapturePhotoSettings()
         photoSettings.isHighResolutionPhotoEnabled = true
         photoSettings.flashMode = .auto
         
-        // Call capturePhoto method by passing our photo settings and a delegate implementing AVCapturePhotoCaptureDelegate
+        // Call capturePhoto method
         capturePhotoOutput.capturePhoto(with: photoSettings, delegate: self)
     }
     
@@ -94,24 +88,15 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
         }
         
         guard let imageData = photo.fileDataRepresentation() else {
-                print("Fail to convert pixel buffer")
-                return
-            }
+            print("Fail to convert pixel buffer")
+            return
+        }
         
         // Initialise an UIImage with our image data
         self.capturedImage = UIImage.init(data: imageData , scale: 1.0)
-        
         UIImageWriteToSavedPhotosAlbum(capturedImage!, nil, nil, nil)
-        
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is ScanViewController {
-            let result = segue.destination as! ScanViewController
-//            result.finalImage = capturedImage!
-            result.scantext = "hello"
-        }
+
+//        TextRecognizer().textrecognizer(capturedImage: capturedImage!)
     }
 }
 

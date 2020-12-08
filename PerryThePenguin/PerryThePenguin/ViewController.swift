@@ -9,9 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var cameraButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+//        let camIcon = UIImage(named: "camera.circle.fill")
+//        cameraButton.setBackgroundImage(camIcon, for: UIControl.State.normal)
+        
+        
     }
     
     @IBAction func launchGPS(_ sender: Any) {
@@ -27,6 +33,15 @@ class ViewController: UIViewController {
         }
 //        present(scanvs, animated: true)
     }
+    
+    
+    
+//    @IBAction func launchScan(_ sender: Any) {
+//        guard (storyboard?.instantiateViewController(identifier: "textspeech_vc") as? TextSpeechViewController) != nil else{
+//            return
+//        }
+////        present(scanvs, animated: true)
+//    }
     
 }
 
