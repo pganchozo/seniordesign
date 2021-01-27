@@ -9,15 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var cameraButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let camIcon = UIImage(named: "camera.circle.fill")
-//        cameraButton.setBackgroundImage(camIcon, for: UIControl.State.normal)
-        
-        
     }
     
     @IBAction func launchGPS(_ sender: Any) {

@@ -11,25 +11,28 @@ import FirebaseMLVision
 class ScanViewController: UIViewController {
     
     @IBOutlet var scanView: UIView!
-    @IBOutlet weak var textResult: UITextView!
-    @IBOutlet weak var imageResult: UIImageView!
+    @IBOutlet weak var textResult: UITextView?
+    @IBOutlet weak var imageview: UIImageView!
     
-    var scanimage: UIImage!
     var textRecognizer: VisionTextRecognizer!
+    var analyzedText:String = ""
+    var imageCaptured = UIImage()
+    
+    let vision = Vision.vision()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageResult.image = UIImage(named: "sampletext")
-        
-        let vision = Vision.vision()
-        textRecognizer = vision.cloudTextRecognizer()
-        
-        let visionImage = VisionImage(image: imageResult.image!)
-        textRecognizer.process(visionImage) { (result, error) in guard error == nil, let result = result else { return }
-            
-            self.textResult.text = result.text
-        }
+        imageview.image = imageCaptured
 
+        textRecognizer = vision.cloudTextRecognizer()
+        let visionImage = VisionImage(image: imageview.image!)
+
+        textRecognizer.process(visionImage) { (result, error) in guard error == nil, let result = result else {return}
+
+            let detectedText = result.text
+            self.textResult!.text = detectedText
+            print(detectedText)
+        }
     }
 }

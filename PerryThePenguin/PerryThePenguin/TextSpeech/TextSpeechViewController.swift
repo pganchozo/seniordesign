@@ -13,17 +13,15 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
     
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet var previewView: UIView!
-    
-//    let result = ScanViewController(nibName: "ScanViewController", bundle: nil)
-    
-    var scannedText: String?
-    var imagetopass: UIImage?
-    var capturedImage: UIImage?
+        
+    var capturedImage: UIImage!
     var captureSession: AVCaptureSession?
     var capturePhotoOutput: AVCapturePhotoOutput?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     
     var previewing = false
+    
+    let myimage = UIImage(named: "sampletext")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +49,12 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
                 print("issue here : captureSesssion.canAddInput")
             }
         } else {
-            print("some problem here")
+            print("error")
         }
-    
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
     override func viewDidLayoutSubviews() {
@@ -61,10 +62,6 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
         if let previewLayer = videoPreviewLayer ,(previewLayer.connection?.isVideoOrientationSupported)! {
             previewLayer.connection?.videoOrientation = UIApplication.shared.statusBarOrientation.videoOrientation ?? .portrait
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     @IBAction func onTapTakePhoto(_ sender: Any) {
@@ -94,10 +91,22 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
         
         // Initialise an UIImage with our image data
         self.capturedImage = UIImage.init(data: imageData , scale: 1.0)
-        UIImageWriteToSavedPhotosAlbum(capturedImage!, nil, nil, nil)
+        debugPrint(capturedImage!)
 
-//        TextRecognizer().textrecognizer(capturedImage: capturedImage!)
+//        performSegue(withIdentifier: "showResult", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showScan" {
+            print("hidhi")
+            let nextView = segue.destination as? ScanViewController
+            debugPrint(capturedImage as Any)
+
+            nextView?.imageCaptured = capturedImage
+        }
+    }
+    
 }
 
 
@@ -112,3 +121,6 @@ extension UIInterfaceOrientation {
         }
     }
 }
+
+// save to photo albym
+// UIImageWriteToSavedPhotosAlbum(capturedImage!, nil, nil, nil)
