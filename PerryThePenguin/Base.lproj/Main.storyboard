@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cbh-wO-OXJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PerryThePenguin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9e-yv-i0y">
+                                <rect key="frame" x="134.07914665098315" y="542" width="145" height="141.99999999999986"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.030777053945794886" green="0.29769258521811837" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="location.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100"/>
+                                </state>
+                                <connections>
+                                    <action selector="launchGPS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gI-kH-PIJ"/>
+                                    <segue destination="xXM-df-Xhr" kind="show" id="ubp-2X-lmV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt4-iH-Zpc">
+                                <rect key="frame" x="117.51667962157876" y="173.99999999999977" width="175.00000000000023" height="199.00000000000006"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.55000000000000004" height="1"/>
+                                <color key="tintColor" red="1" green="0.0028883243894692878" blue="0.48221087733423251" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="camera.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100"/>
+                                </state>
+                                <connections>
+                                    <action selector="launchScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JeM-Cl-JyR"/>
+                                    <segue destination="wHQ-Az-6Ct" kind="show" id="F58-po-4wa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1ND-hX-Xc8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986.95652173913049" y="83.705357142857139"/>
+        </scene>
+        <!--Gps View Controller-->
+        <scene sceneID="kCb-OM-3Oj">
+            <objects>
+                <viewController storyboardIdentifier="gps_vc" id="xXM-df-Xhr" customClass="GpsViewController" customModule="PerryThePenguin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uan-PJ-u1h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8f6-6c-ulo">
+                                <rect key="frame" x="20" y="118" width="279" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FSL-FH-5yr">
+                                <rect key="frame" x="20" y="182" width="374" height="660"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdM-ug-LYY">
+                                <rect key="frame" x="319" y="118" width="75" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Q8P-9X-BY5"/>
+                                    <constraint firstAttribute="width" constant="75" id="ZE2-7R-kAI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efi-A3-eVb">
+                                <rect key="frame" x="190" y="852" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="73f-eX-CCe"/>
+                                    <constraint firstAttribute="height" constant="30" id="zZs-8E-7cS"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="returnPrevious:" destination="xXM-df-Xhr" eventType="touchUpInside" id="XL3-tP-4KH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Q9i-qc-H9y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WdM-ug-LYY" firstAttribute="leading" secondItem="8f6-6c-ulo" secondAttribute="trailing" constant="20" id="9WM-Wa-hJW"/>
+                            <constraint firstItem="WdM-ug-LYY" firstAttribute="top" secondItem="Q9i-qc-H9y" secondAttribute="top" constant="30" id="HGo-bT-Yl3"/>
+                            <constraint firstItem="Efi-A3-eVb" firstAttribute="top" secondItem="FSL-FH-5yr" secondAttribute="bottom" constant="10" id="Mco-47-qR7"/>
+                            <constraint firstItem="Q9i-qc-H9y" firstAttribute="trailing" secondItem="FSL-FH-5yr" secondAttribute="trailing" constant="20" id="Q9W-aT-xua"/>
+                            <constraint firstItem="Q9i-qc-H9y" firstAttribute="trailing" secondItem="WdM-ug-LYY" secondAttribute="trailing" constant="20" id="R7n-eR-mBe"/>
+                            <constraint firstItem="Efi-A3-eVb" firstAttribute="top" secondItem="FSL-FH-5yr" secondAttribute="bottom" constant="10" id="SBD-GA-Tsr"/>
+                            <constraint firstItem="FSL-FH-5yr" firstAttribute="top" secondItem="8f6-6c-ulo" secondAttribute="bottom" constant="30" id="W9F-LL-ToZ"/>
+                            <constraint firstItem="Q9i-qc-H9y" firstAttribute="trailing" secondItem="Efi-A3-eVb" secondAttribute="trailing" constant="190" id="YIQ-fp-kAR"/>
+                            <constraint firstItem="Efi-A3-eVb" firstAttribute="bottom" secondItem="Q9i-qc-H9y" secondAttribute="bottom" constant="20" id="fWT-nT-T7P"/>
+                            <constraint firstItem="8f6-6c-ulo" firstAttribute="leading" secondItem="Q9i-qc-H9y" secondAttribute="leading" constant="20" id="g1k-xK-g76"/>
+                            <constraint firstItem="8f6-6c-ulo" firstAttribute="top" secondItem="Q9i-qc-H9y" secondAttribute="top" constant="30" id="isf-cm-0PP"/>
+                            <constraint firstItem="FSL-FH-5yr" firstAttribute="leading" secondItem="Q9i-qc-H9y" secondAttribute="leading" constant="20" id="oeT-xE-kZN"/>
+                            <constraint firstItem="Efi-A3-eVb" firstAttribute="leading" secondItem="Q9i-qc-H9y" secondAttribute="leading" constant="190" id="vpb-1b-3D2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wg0-qc-akz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCe-U3-8Rh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="84"/>
+        </scene>
+        <!--Text Speech View Controller-->
+        <scene sceneID="sFk-Qs-J69">
+            <objects>
+                <viewController storyboardIdentifier="textspeech_vc" id="wHQ-Az-6Ct" customClass="TextSpeechViewController" customModule="PerryThePenguin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xal-ru-e7c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xy9-uO-hoL">
+                                <rect key="frame" x="279" y="740" width="115" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                <state key="normal">
+                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                    <imageReference key="image" image="arrowshape.zigzag.right.fill" catalog="system" symbolScale="medium"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60" scale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oAO-06-DMp" kind="show" identifier="showScan" id="uQ8-ND-342"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMP-gA-8kS">
+                                <rect key="frame" x="136" y="707" width="142" height="126"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nMP-gA-8kS" secondAttribute="height" multiplier="1:1" id="VDQ-p4-4GN"/>
+                                    <constraint firstAttribute="width" constant="75" id="i83-q7-Vuy"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
+                                <state key="normal" image="largecircle.fill.circle" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTapTakePhoto:" destination="wHQ-Az-6Ct" eventType="touchUpInside" id="5ea-ow-fz0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aJb-k2-6S6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nMP-gA-8kS" firstAttribute="width" secondItem="nMP-gA-8kS" secondAttribute="height" multiplier="1:1" id="3uM-s5-4np"/>
+                            <constraint firstItem="nMP-gA-8kS" firstAttribute="centerX" secondItem="Xal-ru-e7c" secondAttribute="centerX" id="q6o-Rr-WHa"/>
+                            <constraint firstItem="nMP-gA-8kS" firstAttribute="top" secondItem="aJb-k2-6S6" secondAttribute="top" constant="645" id="vc0-7a-rMd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SCs-79-SsB"/>
+                    <connections>
+                        <outlet property="captureButton" destination="nMP-gA-8kS" id="6vu-x2-z4F"/>
+                        <outlet property="previewView" destination="Xal-ru-e7c" id="Z7f-gF-uN0"/>
+                        <outlet property="processButton" destination="Xy9-uO-hoL" id="Jft-8i-p6r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="srx-FR-cWO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2776.811594202899" y="83.705357142857139"/>
+        </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="jd1-Au-av1">
+            <objects>
+                <viewController storyboardIdentifier="scanvc" id="oAO-06-DMp" customClass="ScanViewController" customModule="PerryThePenguin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PEB-KY-7lg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qfi-gd-yiB">
+                                <rect key="frame" x="0.0" y="317" width="414" height="476"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ePu-1O-VBf">
+                                <rect key="frame" x="0.0" y="88" width="414" height="221"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bR-0Y-5I9">
+                                <rect key="frame" x="144" y="709" width="126" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.77035160650000001" green="0.16283518960000001" blue="0.001203823619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="play.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="80"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressSpeakButtonWith_sender:" destination="oAO-06-DMp" eventType="touchUpInside" id="dDc-D6-tEp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zfb-9B-v4V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xMB-oj-afR"/>
+                    <connections>
+                        <outlet property="imageview" destination="ePu-1O-VBf" id="ZmS-bs-hnk"/>
+                        <outlet property="scanView" destination="PEB-KY-7lg" id="beL-dC-4zV"/>
+                        <outlet property="speakButton" destination="8bR-0Y-5I9" id="E9O-Ge-3zA"/>
+                        <outlet property="textResult" destination="qfi-gd-yiB" id="xaj-3m-fQx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2eB-tk-INJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3815.9420289855075" y="83.705357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ted-Ey-NAY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cbh-wO-OXJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ibJ-rj-FSa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7lK-BW-0BF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFi-JP-5YE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="84.375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.zigzag.right.fill" catalog="system" width="128" height="93"/>
+        <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="largecircle.fill.circle" catalog="system" width="128" height="121"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
