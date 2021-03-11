@@ -17,7 +17,7 @@ enum VoiceType: String {
 }
 
 let ttsAPIurl = "https://texttospeech.googleapis.com/v1/text:synthesize"
-let APIKey = "AIzaSyBOURDnReTf8WiZVxaGGuppHnvF2qMcaYY"
+
 
 class SpeechConverter: NSObject, AVAudioPlayerDelegate {
     
