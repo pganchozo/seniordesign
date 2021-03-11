@@ -12,6 +12,7 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
 
     
     @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet weak var processButton: UIButton!
     @IBOutlet var previewView: UIView!
         
     var capturedImage: UIImage!
@@ -20,8 +21,6 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     
     var previewing = false
-    
-    let myimage = UIImage(named: "sampletext")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +42,8 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
                 capturePhotoOutput?.isHighResolutionCaptureEnabled = true
                 videoPreviewLayer?.frame = view.layer.bounds
                 previewView.layer.addSublayer(videoPreviewLayer!)
+                previewView.bringSubviewToFront(captureButton)
+                previewView.bringSubviewToFront(processButton)
                 captureSession?.startRunning()
                 
             } else {
@@ -91,7 +92,6 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
         
         // Initialise an UIImage with our image data
         self.capturedImage = UIImage.init(data: imageData , scale: 1.0)
-        debugPrint(capturedImage!)
 
 //        performSegue(withIdentifier: "showResult", sender: self)
     }
@@ -99,9 +99,7 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showScan" {
-            print("hidhi")
             let nextView = segue.destination as? ScanViewController
-            debugPrint(capturedImage as Any)
 
             nextView?.imageCaptured = capturedImage
         }

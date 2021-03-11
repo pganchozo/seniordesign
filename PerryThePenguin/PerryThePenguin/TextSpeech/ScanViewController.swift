@@ -13,6 +13,7 @@ class ScanViewController: UIViewController {
     @IBOutlet var scanView: UIView!
     @IBOutlet weak var textResult: UITextView?
     @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var speakButton: UIButton!
     
     var textRecognizer: VisionTextRecognizer!
     var analyzedText:String = ""
@@ -32,7 +33,20 @@ class ScanViewController: UIViewController {
 
             let detectedText = result.text
             self.textResult!.text = detectedText
-            print(detectedText)
+        }
+    }
+    
+    @IBAction func didPressSpeakButton(_sender: Any) {
+        speakButton.setTitle("...", for: .normal)
+        speakButton.isEnabled = false
+        speakButton.alpha = 0.6
+        
+        var voiceType: VoiceType = .undefined
+        voiceType = .standardFemale
+        
+        SpeechConverter.shared.speak(text: (textResult?.text)!, voiceType: voiceType) {
+            self.speakButton.isEnabled = true
+            self.speakButton.alpha = 1
         }
     }
 }
