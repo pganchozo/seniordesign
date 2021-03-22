@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cbh-wO-OXJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cbh-wO-OXJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Auth View Controller-->
+        <scene sceneID="tas-7v-js0">
+            <objects>
+                <viewController id="vl2-NS-N64" customClass="OAuthViewController" customModule="PerryThePenguin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3A6-Oz-uCb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZE-vX-bTC">
+                                <rect key="frame" x="74" y="574" width="266" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="vl2-NS-N64" eventType="touchUpInside" id="fVQ-az-I82"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="xNL-xL-4Wl"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Welcome! (1)" translatesAutoresizingMaskIntoConstraints="NO" id="c15-sL-Knd">
+                                <rect key="frame" x="-27" y="-225" width="467" height="1422"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LNX-w3-8mc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mwm-LF-MSu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KpX-ZS-er7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308.69565217391306" y="83.705357142857139"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -33,6 +64,11 @@
                                     <action selector="launchGPS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gI-kH-PIJ"/>
                                     <segue destination="xXM-df-Xhr" kind="show" id="ubp-2X-lmV"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCl-rC-0yP">
+                                <rect key="frame" x="36" y="57" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -66,7 +102,10 @@
                                     <constraint firstAttribute="height" constant="34" id="Q8P-9X-BY5"/>
                                     <constraint firstAttribute="width" constant="75" id="ZE2-7R-kAI"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchPressed:" destination="xXM-df-Xhr" eventType="touchUpInside" id="d6O-ZP-f3X"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efi-A3-eVb">
                                 <rect key="frame" x="190" y="852" width="34" height="30"/>
@@ -99,6 +138,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wg0-qc-akz"/>
+                    <connections>
+                        <outlet property="AddressField" destination="8f6-6c-ulo" id="ARB-Ba-3Ae"/>
+                        <outlet property="getDirectionButton" destination="WdM-ug-LYY" id="dTm-cp-ryY"/>
+                        <outlet property="map" destination="FSL-FH-5yr" id="ogV-Rk-GhF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCe-U3-8Rh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,15 +199,16 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7lK-BW-0BF"/>
+                        <segue destination="vl2-NS-N64" kind="relationship" relationship="rootViewController" id="RDY-CJ-fl7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFi-JP-5YE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="84.375"/>
+            <point key="canvasLocation" x="-426" y="84"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Welcome! (1)" width="1080" height="1920"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

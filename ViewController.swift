@@ -6,28 +6,40 @@
 //
 
 import UIKit
+import Auth0
 
 class ViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        // HomeViewController.swift
+        Auth0
+            .webAuth()
+            .clearSession(federated: false) { result in
+                if result {
+                    // Session cleared
+                }
+            }
+//        present(gpsvc, animated: true)
+    }
+   
     @IBAction func launchGPS(_ sender: Any) {
-    guard (storyboard?.instantiateViewController(identifier: "gps_vc") as? GpsViewController) != nil else{
-    return
-    }
-    //present(gpsvc, animated: true)
-    }
-        
-    @IBAction func launchScan(_ sender: Any) {
-    guard (storyboard?.instantiateViewController(identifier: "textspeech_vc") as? TextSpeechViewController) != nil else{
-    return
-    }
-    //present(scanvs, animated: true)
-    }
-    
-    
-    @IBAction func Login(_ sender: Any) {
-        guard (storyboard?.instantiateViewController(identifier: "login_vc") as? LoginViewController) != nil else{
+        guard (storyboard?.instantiateViewController(identifier: "gps_vc") as? GpsViewController) != nil else{
             return
         }
+//        present(gpsvc, animated: true)
     }
+    
+    @IBAction func launchScan(_ sender: Any) {
+        guard (storyboard?.instantiateViewController(identifier: "textspeech_vc") as? TextSpeechViewController) != nil else{
+            return
+        }
+//        present(scanvs, animated: true)
+    }
+    
 }
 
