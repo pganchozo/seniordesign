@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func launchGPS(_ sender: Any) {
-        guard (storyboard?.instantiateViewController(identifier: "gps_vc") as? GpsViewController) != nil else{
+        guard (storyboard?.instantiateViewController(identifier: "gps2_vc") as? GPS2ViewController) != nil else{
             return
         }
 //        present(gpsvc, animated: true)
@@ -27,6 +27,6 @@ class ViewController: UIViewController {
         }
 //        present(scanvs, animated: true)
     }
-    
+
 }
 

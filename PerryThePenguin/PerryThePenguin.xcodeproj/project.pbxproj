@@ -15,6 +15,8 @@
 		00433960254F72980061C0CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0043395E254F72980061C0CB /* LaunchScreen.storyboard */; };
 		0043397E254F7CB90061C0CB /* TextSpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043397D254F7CB90061C0CB /* TextSpeechViewController.swift */; };
 		00433985254F7EBC0061C0CB /* GpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00433984254F7EBC0061C0CB /* GpsViewController.swift */; };
+		007DF74025E1DDA7005A5CBE /* GPS2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DF73F25E1DDA7005A5CBE /* GPS2ViewController.swift */; };
+		00DF661425E20A6600078B3A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DF661325E20A6600078B3A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		00433961254F72980061C0CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0043397D254F7CB90061C0CB /* TextSpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSpeechViewController.swift; sourceTree = "<group>"; };
 		00433984254F7EBC0061C0CB /* GpsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpsViewController.swift; sourceTree = "<group>"; };
+		007DF73F25E1DDA7005A5CBE /* GPS2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPS2ViewController.swift; sourceTree = "<group>"; };
+		00DF661325E20A6600078B3A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00DF661425E20A6600078B3A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +51,7 @@
 			children = (
 				00433952254F72970061C0CB /* PerryThePenguin */,
 				00433951254F72970061C0CB /* Products */,
-
+				00DF661225E20A6600078B3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,11 +91,19 @@
 			isa = PBXGroup;
 			children = (
 				00433984254F7EBC0061C0CB /* GpsViewController.swift */,
+				007DF73F25E1DDA7005A5CBE /* GPS2ViewController.swift */,
 			);
 			path = GPS;
 			sourceTree = "<group>";
 		};
-		
+		00DF661225E20A6600078B3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00DF661325E20A6600078B3A /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,13 +169,12 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-
-
 /* Begin PBXSourcesBuildPhase section */
 		0043394C254F72970061C0CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007DF74025E1DDA7005A5CBE /* GPS2ViewController.swift in Sources */,
 				00433958254F72970061C0CB /* ViewController.swift in Sources */,
 				00433985254F7EBC0061C0CB /* GpsViewController.swift in Sources */,
 				00433954254F72970061C0CB /* AppDelegate.swift in Sources */,
@@ -315,13 +327,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QVH5R3W5B7;
+				DEVELOPMENT_TEAM = RZMK353V82;
 				INFOPLIST_FILE = PerryThePenguin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BU.PerryThePenguin;
+				PRODUCT_BUNDLE_IDENTIFIER = PerryThePenguinBU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,13 +346,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QVH5R3W5B7;
+				DEVELOPMENT_TEAM = RZMK353V82;
 				INFOPLIST_FILE = PerryThePenguin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BU.PerryThePenguin;
+				PRODUCT_BUNDLE_IDENTIFIER = PerryThePenguinBU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

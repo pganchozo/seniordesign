@@ -44,28 +44,26 @@ class GpsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     print("No location found!")
                     return
                 }
-            print(location)
+//            print(location)
             self.mapThis(destinationCord: location.coordinate)
         }
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations)
+//        print(locations)
     }
     
     func mapThis(destinationCord : CLLocationCoordinate2D){
         let sourceCord = (locationManager.location?.coordinate)!
         let sourcePlaceMark = MKPlacemark(coordinate: sourceCord)
         let destPlaceMark = MKPlacemark(coordinate: destinationCord)
-        
         let sourceItem = MKMapItem(placemark: sourcePlaceMark)
         let destItem = MKMapItem(placemark: destPlaceMark)
-        
         let destRequest = MKDirections.Request()
         destRequest.source = sourceItem
         destRequest.destination = destItem
         destRequest.transportType = .automobile
         destRequest.requestsAlternateRoutes = true
-        
+
         let directions = MKDirections(request: destRequest)
         directions.calculate { (response, error) in
             guard let response = response else {
@@ -78,14 +76,22 @@ class GpsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let route = response.routes[0]
             self.map.addOverlay(route.polyline)
             self.map.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
-            
+//            for route in response.routes{
+//                for step in route.steps{
+//                    print(step.instructions)
+//                }
+//            }
+            for step in route.steps{
+                print(step.instructions)
+            }
+
         }
     }
-    
+
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let render = MKPolylineRenderer(overlay: overlay as! MKPolyline)
         render.strokeColor = .blue
         return render
     }
-    
 }
+
