@@ -1,0 +1,32 @@
+PODS:
+  - Auth0 (1.31.0):
+    - JWTDecode
+    - SimpleKeychain
+  - JWTDecode (2.6.0)
+  - Lock (2.21.0):
+    - Auth0
+    - Lock/Classic (= 2.21.0)
+  - Lock/Classic (2.21.0):
+    - Auth0
+  - SimpleKeychain (0.12.2)
+
+DEPENDENCIES:
+  - Auth0 (~> 1.0)
+  - Lock (~> 2.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Auth0
+    - JWTDecode
+    - Lock
+    - SimpleKeychain
+
+SPEC CHECKSUMS:
+  Auth0: 5a4ddc55570c8dfb1521de559d7f5409fd7be632
+  JWTDecode: 480ca441ddbd5fbfb2abf17870af62f86436be58
+  Lock: f642866e3e417d59ebe6d7d6a445b82e76ea3bbe
+  SimpleKeychain: d6a74781e20ebac8cd89deebf593587913aeed07
+
+PODFILE CHECKSUM: 2928c4504dfb9d74435ec08bb25bcd37b4dfb824
+
+COCOAPODS: 1.10.1
