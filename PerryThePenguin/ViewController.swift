@@ -9,13 +9,9 @@ import UIKit
 import CoreBluetooth
 import Foundation
 
-
-
 class ViewController: UIViewController {
-
-//    @IBOutlet var scanningLabel: UILabel!
     
-    var simpleBluetoothIO: SimpleBluetoothIO!
+//    var simpleBluetoothIO: SimpleBluetoothIO!
     
     private var centralManager: CBCentralManager!
     private var bluefruitPeripheral: CBPeripheral!

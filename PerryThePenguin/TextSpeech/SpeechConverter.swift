@@ -92,7 +92,6 @@ class SpeechConverter: NSObject, AVAudioPlayerDelegate {
     private func makePostRequest(url: String, postData: Data, header: [String: String] = [:]) -> [String: AnyObject] {
         
         var dict: [String: AnyObject] = [:]
-        
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.httpBody = postData

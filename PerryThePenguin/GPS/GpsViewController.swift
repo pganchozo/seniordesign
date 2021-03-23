@@ -9,10 +9,10 @@ class GpsViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     
-
     @IBAction func backButton(_ sender: Any) {
 //        present(gpsvc, animated: true)
     }
+    
     var locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D!
     

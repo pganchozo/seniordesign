@@ -104,15 +104,15 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
             if capturedImage != nil {
                 nextView?.imageCaptured = capturedImage
             }
-            else {
-            }
+            
+            else { }
 
         }
     }
     
     @IBAction func onProcessButton (_ sender: Any) {
                 
-        let alertController = UIAlertController(title: "NO IMAGE", message: "Please capture image", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "NO IMAGE", message: "Please capture an image", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "DISMISS", style: .default))
         

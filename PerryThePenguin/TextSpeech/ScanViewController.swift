@@ -16,7 +16,6 @@ class ScanViewController: UIViewController {
     @IBOutlet weak var speakButton: UIButton!
     
     var textRecognizer: VisionTextRecognizer!
-    var analyzedText:String = ""
     var imageCaptured = UIImage()
     
     let vision = Vision.vision()
@@ -41,7 +40,7 @@ class ScanViewController: UIViewController {
         speakButton.isEnabled = false
         speakButton.alpha = 0.6
         
-        let alertController = UIAlertController(title: "NO TEXT", message: "Still processing detected text", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "NO TEXT", message: "Processing detected text", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "DISMISS", style: .default))
         
