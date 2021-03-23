@@ -41,12 +41,25 @@ class ScanViewController: UIViewController {
         speakButton.isEnabled = false
         speakButton.alpha = 0.6
         
+        let alertController = UIAlertController(title: "NO TEXT", message: "Still processing detected text", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "DISMISS", style: .default))
+        
         var voiceType: VoiceType = .undefined
         voiceType = .standardFemale
         
-        SpeechConverter.shared.speak(text: (textResult?.text)!, voiceType: voiceType) {
-            self.speakButton.isEnabled = true
-            self.speakButton.alpha = 1
+        if (textResult?.text)! == "" {
+            self.present(alertController, animated: true, completion: nil)
+            speakButton.isEnabled = true
         }
+        
+        else {
+            SpeechConverter.shared.speak(text: (textResult?.text)!, voiceType: voiceType) {
+                self.speakButton.isEnabled = true
+                self.speakButton.alpha = 1
+            }
+        }
+        
+        
     }
 }
