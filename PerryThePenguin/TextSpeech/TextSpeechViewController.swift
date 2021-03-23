@@ -100,11 +100,27 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
         
         if segue.identifier == "showScan" {
             let nextView = segue.destination as? ScanViewController
+            
+            if capturedImage != nil {
+                nextView?.imageCaptured = capturedImage
+            }
+            else {
+            }
 
-            nextView?.imageCaptured = capturedImage
         }
     }
     
+    @IBAction func onProcessButton (_ sender: Any) {
+                
+        let alertController = UIAlertController(title: "NO IMAGE", message: "Please capture image", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "DISMISS", style: .default))
+        
+        if capturedImage == nil {
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+    }
 }
 
 
@@ -119,6 +135,3 @@ extension UIInterfaceOrientation {
         }
     }
 }
-
-// save to photo albym
-// UIImageWriteToSavedPhotosAlbum(capturedImage!, nil, nil, nil)
