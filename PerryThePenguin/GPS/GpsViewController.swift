@@ -35,6 +35,7 @@ class GpsViewController: UIViewController {
         
         if self.isMovingFromParent{
             print("LEAVING")
+            print("hello")
             
             self.steps = [MKRoute.Step]()
             self.stepCounter = 0
