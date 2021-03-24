@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     @IBAction func startScanning() -> Void {
         
       centralManager?.scanForPeripherals(withServices: [CBUUIDs.BLEService_UUID])
-            debugPrint("scanning....")
+            debugPrint("scanning...")
     }
     
     @IBAction func launchGPS(_ sender: Any) {

@@ -47,7 +47,6 @@ class GpsViewController: UIViewController {
             self.initialMessage = ""
             self.getNext = 0
         }
-        
     }
     
     override func viewDidLoad() {

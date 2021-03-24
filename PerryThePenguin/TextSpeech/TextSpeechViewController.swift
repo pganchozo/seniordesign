@@ -106,7 +106,6 @@ class TextSpeechViewController: UIViewController, AVCapturePhotoCaptureDelegate 
             }
             
             else { }
-
         }
     }
     

@@ -106,7 +106,6 @@ class SpeechConverter: NSObject, AVAudioPlayerDelegate {
             if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] {
                 dict = json
             }
-            
             semaphore.signal()
         }
         

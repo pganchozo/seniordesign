@@ -58,7 +58,5 @@ class ScanViewController: UIViewController {
                 self.speakButton.alpha = 1
             }
         }
-        
-        
     }
 }
