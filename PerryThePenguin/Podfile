@@ -9,5 +9,7 @@ target 'PerryThePenguin' do
   # Add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
   pod 'Firebase/MLVision'
+  pod 'Auth0', '~> 1.0'
+  pod 'Lock', '~> 2.0'
 
 end

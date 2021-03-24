@@ -14,7 +14,6 @@
 		0043395D254F72980061C0CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0043395C254F72980061C0CB /* Assets.xcassets */; };
 		00433960254F72980061C0CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0043395E254F72980061C0CB /* LaunchScreen.storyboard */; };
 		0043397E254F7CB90061C0CB /* TextSpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043397D254F7CB90061C0CB /* TextSpeechViewController.swift */; };
-		00433985254F7EBC0061C0CB /* Gps3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00433984254F7EBC0061C0CB /* Gps3ViewController.swift */; };
 		24971A202609646D008DCC56 /* CBUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24971A1F2609646D008DCC56 /* CBUUID.swift */; };
 		24971A43260AA45D008DCC56 /* GpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24971A42260AA45D008DCC56 /* GpsViewController.swift */; };
 		24A4888925F9BF0200E02504 /* SimpleBluetoothIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A4888825F9BF0200E02504 /* SimpleBluetoothIO.swift */; };
@@ -33,7 +32,6 @@
 		0043395C254F72980061C0CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0043395F254F72980061C0CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0043397D254F7CB90061C0CB /* TextSpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSpeechViewController.swift; sourceTree = "<group>"; };
-		00433984254F7EBC0061C0CB /* Gps3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gps3ViewController.swift; sourceTree = "<group>"; };
 		24971A1F2609646D008DCC56 /* CBUUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBUUID.swift; sourceTree = "<group>"; };
 		24971A42260AA45D008DCC56 /* GpsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpsViewController.swift; sourceTree = "<group>"; };
 		24A4888825F9BF0200E02504 /* SimpleBluetoothIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBluetoothIO.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				24971A42260AA45D008DCC56 /* GpsViewController.swift */,
-				00433984254F7EBC0061C0CB /* Gps3ViewController.swift */,
 			);
 			path = GPS;
 			sourceTree = "<group>";
@@ -251,7 +248,6 @@
 				00433958254F72970061C0CB /* ViewController.swift in Sources */,
 				24A5E439255B2E1100D8D171 /* ScanViewController.swift in Sources */,
 				24971A202609646D008DCC56 /* CBUUID.swift in Sources */,
-				00433985254F7EBC0061C0CB /* Gps3ViewController.swift in Sources */,
 				00433954254F72970061C0CB /* AppDelegate.swift in Sources */,
 				24F5728225F99820001F0098 /* SpeechConverter.swift in Sources */,
 				00433956254F72970061C0CB /* SceneDelegate.swift in Sources */,
